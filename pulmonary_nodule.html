@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidental Findings Report Generator</title>
+</head>
+
+<body>
+    <form>
+        <h2>Pulmonary Nodule</h2>
+        <p>Maximum nodule size in mm:</p><input type="text" name="nodule-size">
+        <p>Number of nodules:</p><select name="nodule-number">
+            <option value="solitary">Solitary</option>
+            <option value="multiple">Multiple</option>
+        </select>
+        <p>Nodule type:</p><select name="nodule-type">
+            <option value="solid">Solid</option>
+            <option value="groundglass">Ground Glass</option>
+            <option value="partsolid">Part Solid</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="recommend()">Submit</button>
+        <p>Copy and paste below:</p>
+        <textarea id="impression" cols="80" rows="10"></textarea>
+    </form>
+
+
+    <script src="pulmonary_nodule.js"></script>
+</body>
+
+</html>
