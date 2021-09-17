@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incidental Findings Report Generator</title>
+    <title>Incidental Pulmonary Nodule Assistant</title>
 </head>
 
 <body>
     <form>
-        <h2>Pulmonary Nodule</h2>
+        <h2>Incidental Pulmonary Nodule Assistant</h2>
+        <h3>Instructions:</h3>
+        <p>Enter or select the appropriate values below and press submit. Please perform separate entries if there are different types of pulmonary nodules.</p>
+        <br>
         <p>Maximum nodule size in mm:</p><input type="text" name="nodule-size" id="nodule-size">
         <p>Number of nodules:</p><select name="nodule-number" id="nodule-number">
             <option value="solitary">Solitary</option>
@@ -26,7 +29,6 @@
         <p>Copy and paste below into the impression section:</p>
         <textarea id="impression" cols="80" rows="10"></textarea>
     </form>
-
 
     <script src="pulmonary_nodule.js"></script>
 </body>

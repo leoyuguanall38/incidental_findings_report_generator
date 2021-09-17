@@ -12,6 +12,8 @@ var noduleType = 'Solid';
 
 var recommendation = '';
 
+var findings = '';
+
 const options = [
     '<6mm solid',
     '6-8mm solid solitary',
@@ -47,18 +49,30 @@ const recommendations = [
 var noduleFinding = `${noduleNumber} pulmonary nodule(s) measuring up to ${maxNoduleSize}.`
 
 function recommend() {
-    console.log('temporary recommendations')
+    if (!document.getElementById('nodule-size').value) {
+        alert('Please enter a number!');
+        return;
+    }
 
-
-
-    maxNoduleSize = document.getElementById('nodule-size').value;
+    maxNoduleSize = Math.ceil(document.getElementById('nodule-size').value);
     console.log(maxNoduleSize);
+    if (isNaN(maxNoduleSize)) {
+        alert('Please enter a number!');
+        return;
+    }
 
     noduleNumber = document.getElementById('nodule-number').value;
     console.log(noduleNumber);
 
     noduleType = document.getElementById('nodule-type').value;
     console.log(noduleType);
+
+    if (noduleNumber === 'solitary') {
+        findings = `Solitary ${noduleType} pulmonary nodule measuring ${maxNoduleSize} mm. `
+    } else {
+        findings = `Multiple ${noduleType} pulmonary nodules measuring up to ${maxNoduleSize} mm. `
+    }
+    console.log(findings);
 
     if (noduleType == 'solid') {
         if (maxNoduleSize < 6) {
@@ -106,8 +120,5 @@ function recommend() {
         }
     }
 
-
-
-
-    findingsAndImpression.value = recommendation;
+    findingsAndImpression.value = findings + recommendation;
 }
