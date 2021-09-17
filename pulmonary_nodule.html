@@ -11,19 +11,19 @@
 <body>
     <form>
         <h2>Pulmonary Nodule</h2>
-        <p>Maximum nodule size in mm:</p><input type="text" name="nodule-size">
-        <p>Number of nodules:</p><select name="nodule-number">
+        <p>Maximum nodule size in mm:</p><input type="text" name="nodule-size" id="nodule-size">
+        <p>Number of nodules:</p><select name="nodule-number" id="nodule-number">
             <option value="solitary">Solitary</option>
             <option value="multiple">Multiple</option>
         </select>
-        <p>Nodule type:</p><select name="nodule-type">
+        <p>Nodule type:</p><select name="nodule-type" id="nodule-type">
             <option value="solid">Solid</option>
-            <option value="groundglass">Ground Glass</option>
-            <option value="partsolid">Part Solid</option>
+            <option value="ground-glass">Ground Glass</option>
+            <option value="part-solid">Part Solid</option>
         </select>
         <br><br>
         <button type="button" onclick="recommend()">Submit</button>
-        <p>Copy and paste below:</p>
+        <p>Copy and paste below into the impression section:</p>
         <textarea id="impression" cols="80" rows="10"></textarea>
     </form>
 
