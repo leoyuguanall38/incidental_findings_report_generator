@@ -20,10 +20,10 @@
         <option value=">1.5cm">&gt;1.5 cm</option>
     </select>
     <br>
-    <br>
+    <p>----------------</p>
 
     <div style='display:none;' id="<1cm">
-        <p>Is the patient at low risk or high risk?</p>
+        <p><b>Is the patient at low risk or high risk?</b></p>
         <p>Low-risk patient: no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
         <p>High-risk patient: known primary malignancy with a propensity to metastasize to the liver, cirrhosis, and/or other hepatic risk factors.</p>
         <select name="patient_risk" id="patient_risk" onchange="riskOptionExpand(this.value);">
@@ -31,17 +31,76 @@
             <option value="low_risk">Low risk</option>
             <option value="high_risk">High risk</option>
         </select>
+        <br>
+        <p>----------------</p>
     </div>
     <div style='display:none;' id="1-1.5cm">
-        <p>1-1.5 cm</p>
+        <p>Imaging features:</p>
+        <select name="imaging_features" id="imaging_features" onchange="imagingFeaturesOptionExpand(this.value);">
+            <option>Imaging Features</option>
+            <option value="benign">Benign</option>
+            <option value="suspicious">Suspicious</option>
+            <option value="flash-filling">Flash-filling</option>
+        </select>
+        <br>
+        <p>----------------</p>
+
+        <div style='display:none;' id="flash-filling_1.0-1.5cm">
+            <p><b>Is the patient at low risk or high risk?</b></p>
+            <p>Low-risk patient: no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
+            <p>High-risk patient: known primary malignancy with a propensity to metastasize to the liver, cirrhosis, and/or other hepatic risk factors.</p>
+            <select name="patient_risk_1.0-1.5cm" id="patient_risk_1.0-1.5cm" onchange="riskOptionExpand(this.value);">
+                <option>Patient risk</option>
+                <option value="low_risk">Low risk</option>
+                <option value="high_risk">High risk</option>
+            </select>
+            <br>
+            <p>----------------</p>
+        </div>
     </div>
     <div style='display:none;' id=">1.5cm">
-        <p>greater than 1.5</p>
+        <p>Imaging features:</p>
+        <select name="imaging_features_>1.5cm" id="imaging_features_>1.5cm" onchange="imagingFeaturesOptionExpand2(this.value);">
+            <option>Imaging Features</option>
+            <option value="benign">Benign</option>
+            <option value="suspicious">Suspicious</option>
+            <option value="flash-filling">Flash-filling</option>
+        </select>
+        <br>
+        <p>----------------</p>
+
+        <div style='display:none;' id="suspicious_or_flash-filling_>1.5cm">
+            <p><b>Is the patient at low risk or high risk?</b></p>
+            <p>Low-risk patient: no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
+            <p>High-risk patient: known primary malignancy with a propensity to metastasize to the liver, cirrhosis, and/or other hepatic risk factors.</p>
+            <select name="patient_risk_>1.5cm" id="patient_risk_>1.5cm" onchange="riskOptionExpand(this.value);">
+                <option>Patient risk</option>
+                <option value="low_risk">Low risk</option>
+                <option value="high_risk">High risk</option>
+            </select>
+            <br>
+            <p>----------------</p>
+        </div>
     </div>
 
     <div style="display:none;" id="submission">
+        <h3>Lesion Features</h3>
         <p>Maximum lesion size in cm:</p><input type="text" name="lesion_size" id="lesion_size">
-        <br><br>
+        <br>
+
+        <p>Lesion location:</p><input type="text" name="lesion_location" id="lesion_location">
+        <br>
+
+        <p>Lesion appearance:</p>
+        <select name="lesion_appearance" id="lesion_appearance">
+            <option>Lesion Appearance</option>
+            <option value="hypodense">Hypodense</option>
+            <option value="hyperdense">Hyperdense</option>
+            <option value="heterogeneous">Heterogeneous</option>
+            <option value="enhancing">Enhancing</option>
+        </select>
+
+        <br><br><br>
         <button type="button" onclick="recommend()">Submit</button>
         <p>Copy and paste below into the impression section:</p>
         <textarea id="impression" cols="80" rows="10"></textarea>
