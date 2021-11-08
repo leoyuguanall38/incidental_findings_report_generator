@@ -15,7 +15,7 @@ var recommendation = "";
 const source = "The recommendations provided is based on Gore RM, Pickhardt PJ, Mortele KJ, et al. Management of Incidental Liver Lesions on CT: A White Paper of the ACR Incidental Findings Committee. J Am Coll Radiol. 2017;14(11):1429-1437.";
 
 const recommendations = [
-    '[This is favored to represent a benign lesion. No further follow-up is required.]',
+    '[Based on imaging characteristics, this is favored to represent a benign lesion. No further follow-up is required.]',
     '[Follow-up liver MRI in 3-6 months (or earlier as per clinical scenario) is recommended for further evaluation.]',
     '[Prompt liver MRI is recommended for further evaluation.]',
     '[Prompt liver MRI or tissue sampling is recommended for further evaluation.]'
@@ -24,7 +24,7 @@ const recommendations = [
 function sizeOptionExpand(sizeOption) {
     document.getElementById("submission").style.display = 'none';
 
-    sizeCategory = sizeOption;
+    sizeCategory = sizeOption; //Save size option to global variable sizeCategory
 
     if (sizeOption == '<1cm') {
         document.getElementById("<1cm").style.display = 'inline';
@@ -60,8 +60,10 @@ function imagingFeaturesOptionExpand(imagingFeatures) {
 
     if (imagingFeatures == 'benign') {
         document.getElementById("submission").style.display = 'inline';
+        document.getElementById("flash-filling_1.0-1.5cm").style.display = 'none';
     } else if (imagingFeatures == 'suspicious') {
         document.getElementById("submission").style.display = 'inline';
+        document.getElementById("flash-filling_1.0-1.5cm").style.display = 'none';
     } else if (imagingFeatures == 'flash-filling') {
         document.getElementById("flash-filling_1.0-1.5cm").style.display = 'inline';
         document.getElementById("submission").style.display = 'none';
@@ -76,6 +78,7 @@ function imagingFeaturesOptionExpand2(imagingFeatures) {
 
     if (imagingFeatures == 'benign') {
         document.getElementById("submission").style.display = 'inline';
+        document.getElementById("suspicious_or_flash-filling_>1.5cm").style.display = 'none';
     } else if (imagingFeatures == 'suspicious' || 'flash-filling') {
         document.getElementById("suspicious_or_flash-filling_>1.5cm").style.display = 'inline';
         document.getElementById("submission").style.display = 'none';
@@ -89,6 +92,11 @@ function recommend() {
     lesionAppearance = document.getElementById('lesion_appearance').value;
     lesionSize = document.getElementById('lesion_size').value;
     lesionLocation = document.getElementById('lesion_location').value;
+
+    if (lesionAppearance == "Lesion Appearance" || lesionSize == "" || lesionLocation == "") {
+        alert("Please select/enter the required values!");
+        return;
+    }
 
     lesionDescription = `${lesionSize} cm ${lesionAppearance} lesion within ${lesionLocation} of the liver.`;
 

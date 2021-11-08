@@ -10,9 +10,19 @@
 
 <body>
     <h2>Incidental Liver Lesion Assistant</h2>
+
+    <a href="resources/ACR_incidental_findings_white_paper.pdf">
+        <h4>ACR Incidental Findings White Papers: Liver</h4>
+    </a>
+
+    <a href="resources/liver_incidentals_workflow.jpg">
+        <h4>Liver Incidentals Workflow</h4>
+    </a>
+
     <h3>Instructions:</h3>
-    <p>Select the appropriate options from the dropdown menu below and enter the required values.</p>
-    <p><u>Size of the largest lesion:</u></p>
+    <p>Select the appropriate options from the dropdown menu below and enter the required values. Please refresh the page for each new lesion.</p>
+
+    <p><b><u>Size of the largest lesion:</u></b></p>
     <select name="size_range" id="size_range" onchange="sizeOptionExpand(this.value);">
         <option>Size</option>
         <option value="<1cm">&lt;1 cm</option>
@@ -23,9 +33,9 @@
     <p>----------------</p>
 
     <div style='display:none;' id="<1cm">
-        <p><b>Is the patient at low risk or high risk?</b></p>
-        <p>Low-risk patient: no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
-        <p>High-risk patient: known primary malignancy with a propensity to metastasize to the liver, cirrhosis, and/or other hepatic risk factors.</p>
+        <p><b><u>Is the patient at low risk or high risk?</u></b></p>
+        <p><b>Low-risk patient:</b> has no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
+        <p><b>High-risk patient:</b> has known primary malignancy with a propensity to metastasize to the liver, hepatic dysfunction/cirrhosis, and/or other hepatic risk factors.</p>
         <select name="patient_risk" id="patient_risk" onchange="riskOptionExpand(this.value);">
             <option>Patient risk</option>
             <option value="low_risk">Low risk</option>
@@ -34,8 +44,15 @@
         <br>
         <p>----------------</p>
     </div>
+
     <div style='display:none;' id="1-1.5cm">
-        <p>Imaging features:</p>
+        <p><b><u>Imaging features:</u></b></p>
+        <p><b>Benign features:</b> sharp margin, homogeneous low attenuation (&leq;20 Hounsfield units) on noncontrast and/or portal venous-phase imaging, and characteristic features of hemangiomas, focal nodular hyperplasia (FNH), focal fatty sparing or
+            deposition, or perfusional changes.</p>
+        <p><b>Suspicious features:</b> ill-defined margins, heterogeneous density, mural thickening or nodularity, thick septa, and intermediate to high attenuation on portal venous-phase imaging (&gt;20 HU). If pre- and post-contrast CT is available, enhancement
+            &gt;20 HU is a suspicious feature.</p>
+        <p><b>Flash-filling feature:</b> uniform hyperenhancement relative to hepatic parenchyma on arterial-phase (including late arterial/early portal venous-phase) post-contrast imaging. If additional post-contrast phases are available to characterize
+            lesion as benign (eg. hemangioma) or suspicious (eg. hepatocellular carcinoma), the lesion should be placed in one of those respective categories and not here.</p>
         <select name="imaging_features" id="imaging_features" onchange="imagingFeaturesOptionExpand(this.value);">
             <option>Imaging Features</option>
             <option value="benign">Benign</option>
@@ -47,8 +64,8 @@
 
         <div style='display:none;' id="flash-filling_1.0-1.5cm">
             <p><b>Is the patient at low risk or high risk?</b></p>
-            <p>Low-risk patient: no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
-            <p>High-risk patient: known primary malignancy with a propensity to metastasize to the liver, cirrhosis, and/or other hepatic risk factors.</p>
+            <p><b>Low-risk patient:</b> has no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
+            <p><b>High-risk patient:</b> has known primary malignancy with a propensity to metastasize to the liver, hepatic dysfunction/cirrhosis, and/or other hepatic risk factors.</p>
             <select name="patient_risk_1.0-1.5cm" id="patient_risk_1.0-1.5cm" onchange="riskOptionExpand(this.value);">
                 <option>Patient risk</option>
                 <option value="low_risk">Low risk</option>
@@ -58,8 +75,15 @@
             <p>----------------</p>
         </div>
     </div>
+
     <div style='display:none;' id=">1.5cm">
-        <p>Imaging features:</p>
+        <p><b><u>Imaging features:</u></b></p>
+        <p><b>Benign features:</b> sharp margin, homogeneous low attenuation (&leq;20 Hounsfield units) on noncontrast and/or portal venous-phase imaging, and characteristic features of hemangiomas, focal nodular hyperplasia (FNH), focal fatty sparing or
+            deposition, or perfusional changes.</p>
+        <p><b>Suspicious features:</b> ill-defined margins, heterogeneous density, mural thickening or nodularity, thick septa, and intermediate to high attenuation on portal venous-phase imaging (&gt;20 HU). If pre- and post-contrast CT is available, enhancement
+            &gt;20 HU is a suspicious feature.</p>
+        <p><b>Flash-filling feature:</b> uniform hyperenhancement relative to hepatic parenchyma on arterial-phase (including late arterial/early portal venous-phase) post-contrast imaging. If additional post-contrast phases are available to characterize
+            lesion as benign (eg. hemangioma) or suspicious (eg. hepatocellular carcinoma), the lesion should be placed in one of those respective categories and not here.</p>
         <select name="imaging_features_>1.5cm" id="imaging_features_>1.5cm" onchange="imagingFeaturesOptionExpand2(this.value);">
             <option>Imaging Features</option>
             <option value="benign">Benign</option>
@@ -71,8 +95,8 @@
 
         <div style='display:none;' id="suspicious_or_flash-filling_>1.5cm">
             <p><b>Is the patient at low risk or high risk?</b></p>
-            <p>Low-risk patient: no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
-            <p>High-risk patient: known primary malignancy with a propensity to metastasize to the liver, cirrhosis, and/or other hepatic risk factors.</p>
+            <p><b>Low-risk patient:</b> has no known primary malignancy, hepatic dysfunction, or hepatic risk factors.</p>
+            <p><b>High-risk patient:</b> has known primary malignancy with a propensity to metastasize to the liver, hepatic dysfunction/cirrhosis, and/or other hepatic risk factors.</p>
             <select name="patient_risk_>1.5cm" id="patient_risk_>1.5cm" onchange="riskOptionExpand(this.value);">
                 <option>Patient risk</option>
                 <option value="low_risk">Low risk</option>
@@ -85,13 +109,13 @@
 
     <div style="display:none;" id="submission">
         <h3>Lesion Features</h3>
-        <p>Maximum lesion size in cm:</p><input type="text" name="lesion_size" id="lesion_size">
+        <p><u>Maximum lesion size in cm:</u> enter an integer or float.</p><input type="text" name="lesion_size" id="lesion_size" placeholder="lesion size">
         <br>
 
-        <p>Lesion location:</p><input type="text" name="lesion_location" id="lesion_location">
+        <p><u>Lesion location:</u> enter the location of the lesion (eg. right lobe, left lobe, segment 1, segment 2/3, etc.).</p><input type="text" name="lesion_location" id="lesion_location" placeholder="lesion location">
         <br>
 
-        <p>Lesion appearance:</p>
+        <p><u>Lesion appearance:</u></p>
         <select name="lesion_appearance" id="lesion_appearance">
             <option>Lesion Appearance</option>
             <option value="hypodense">Hypodense</option>
@@ -105,7 +129,6 @@
         <p>Copy and paste below into the impression section:</p>
         <textarea id="impression" cols="80" rows="10"></textarea>
     </div>
-
 
 
     <script src="liver_lesion.js"></script>
